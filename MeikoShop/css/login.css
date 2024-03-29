@@ -1,0 +1,118 @@
+﻿{
+    box-sizing:border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+
+header {
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .06);
+    height: 84px;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Align items to the start of the header (left) */
+}
+
+    header img {
+        max-height: 100%; /* Ensure the image doesn't exceed the height of the header */
+        max-width: 50%;
+    }
+    header h2 {
+        margin-bottom: 10px;
+        font-family: 'Nunito', sans-serif; /* Specify the font family */
+        color: #ff9f00; /* Move the text 10px above the center */
+    }
+
+
+
+    /* login.css */
+    /* Định dạng cơ bản cho form đăng nhập */
+    .form-horizontal
+
+{
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng cho nhãn và trường nhập */
+.form-group {
+    margin-bottom: 45px;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Định dạng cho nút đăng nhập */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Định dạng cho liên kết "Back to List" */
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #007bff;
+}
+ .back-link:hover {
+     color: #0056b3;
+    }
+
+/* Style the footer */
+
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+/* Footer styles */
+footer {
+    background-image: url('/ELMImages/banner.png'); /* Replace 'your-image.jpg' with the path to your image */
+    background-size:10px; /* Cover the entire footer */
+    background-position: center; /* Center the background image */
+    padding: 20px 0; /* Add padding at the top and bottom */
+    text-align: center; /* Center align text */
+    position: fixed; /* Fixed position at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align left */
+    right: 0; /* Align right */
+    z-index: 999; /* Ensure the footer stays on top of other content */
+    border-top: 1px solid #ddd; /* Add a top border for separation */
+}
+    /* Footer text styles */
+    footer p {
+        color: #007bff; /* Set text color */
+        font-size: 14px; /* Set font size */
+    }
+
+
+

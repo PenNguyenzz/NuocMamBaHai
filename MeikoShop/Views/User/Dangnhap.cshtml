@@ -1,0 +1,91 @@
+﻿@model BaHai.Models.LoginModel
+
+@{ ViewBag.Title = "Dangnhap";
+    Layout = null; }
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ba Hai Fish Sauce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="...">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link href="~/img/logoNuocMam.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+   @* <link href="~/css/bootstrap.min.css" rel="stylesheet">*@
+
+    <!-- Template Stylesheet -->
+    <link href="~/css/login.css" rel="stylesheet">
+</head>
+
+<body>
+        <header>
+                <img src="~/img/logoNuocMam.png" />
+            <h2 class="text-primary m-0">Ba Hai Fish Sauce</h2>
+            
+        </header>
+
+    @using (Html.BeginForm("Dangnhap", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <h2>Welcome</h2>
+    <h3 class="text-danger">@ViewBag.Fail</h3>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.userMail, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.userMail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.userMail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.password, new { htmlAttributes = new { type = "Password", @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Đăng nhập" class="btn btn-primary" />
+        </div>
+    </div>
+    <div class="hrNwO1 PNGrtG">Bạn mới biết đến Shopee? <a class="U3bTnx" href="/User/Dangky">Đăng ký</a></div>
+</div>
+
+
+    }
+    
+
+
+   @* <div>
+        @Html.ActionLink("Back to List", "_Layout.cshtml")
+    </div>*@
+
+    <footer>
+        
+        <p>CC3</p>
+    </footer>
+
+</body>
+</html>
